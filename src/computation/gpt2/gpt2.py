@@ -1,0 +1,486 @@
+# File name  :    gpt2.py
+# Author     :    junwei cui, le qin, weilin cai
+# Time       :    2023/10/13 14:47:11
+# Version    :    V1.0
+# Abstract   :    This file analysis GPT-2 Model from <~/miniconda3/envs/env_name/lib/python3.8/site-packages/transformers/models/gpt2/modeling_gpt2.py> 
+
+
+import os
+import sys
+file_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(os.path.join(file_path, '../../utils/'))
+
+import utils
+
+def get_gpt_parameter(model_name):
+    '''
+    ~/miniconda3/envs/env_name/lib/python3.8/site-packages/transformers/models/gpt2/configuration_gpt2.py
+    '''
+    GPT2_PRETRAINED_CONFIG_ARCHIVE_MAP = {
+    "gpt2": "https://huggingface.co/gpt2/resolve/main/config.json",
+    "gpt2-medium": "https://huggingface.co/gpt2-medium/resolve/main/config.json",
+    "gpt2-large": "https://huggingface.co/gpt2-large/resolve/main/config.json",
+    "gpt2-xl": "https://huggingface.co/gpt2-xl/resolve/main/config.json",
+    "distilgpt2": "https://huggingface.co/distilgpt2/resolve/main/config.json",
+    }
+
+    # https://huggingface.co/facebook/opt-350m
+    # https://github.com/huggingface/transformers/blob/main/src/transformers/models/opt/configuration_opt.py
+    OPT_PRETRAINED_CONFIG_ARCHIVE_MAP = {
+    "facebook/opt-125m": "https://huggingface.co/facebook/opt-125m/blob/main/config.json",
+    "facebook/opt-350m": "https://huggingface.co/facebook/opt-350m/blob/main/config.json",
+    "facebook/opt-1.3b": "https://huggingface.co/facebook/opt-1.3b/blob/main/config.json",
+    "facebook/opt-2.7b": "https://huggingface.co/facebook/opt-2.7b/blob/main/config.json",
+    "facebook/opt-6.7b": "https://huggingface.co/facebook/opt-6.7b/blob/main/config.json",
+    "facebook/opt-13b": "https://huggingface.co/facebook/opt-13b/blob/main/config.json",
+    }
+
+    GPT_NEO_PRETRAINED_CONFIG_ARCHIVE_MAP = {
+        "EleutherAI/gpt-neo-1.3B": "https://huggingface.co/EleutherAI/gpt-neo-1.3B/resolve/main/config.json",
+        "EleutherAI/gpt-neo-125m": "https://huggingface.co/EleutherAI/gpt-neo-125m/blob/main/config.json",
+        # See all GPTNeo models at https://huggingface.co/models?filter=gpt_neo
+    }    
+
+    # model_name = 'gpt2-medium'
+    config_path = os.path.join(file_path, f'./input/{model_name}-config.json')
+
+    if os.path.exists(config_path) is False:
+        utils.download_file(GPT2_PRETRAINED_CONFIG_ARCHIVE_MAP[model_name], config_path)
+    else:
+        pass
+    model_config = utils.load_dict_json(config_path)
+
+    '''
+    n_ctx (:obj:`int`, `optional`, defaults to 1024):
+            Dimensionality of the causal mask (usually same as n_positions).
+    n_positions (:obj:`int`, `optional`, defaults to 1024):
+            The maximum sequence length that this model might ever be used with. Typically set this to something large
+            just in case (e.g., 512 or 1024 or 2048).
+    n_embd (:obj:`int`, `optional`, defaults to 768):
+            Dimensionality of the embeddings and hidden states.     
+    n_head (:obj:`int`, `optional`, defaults to 12):
+            Number of attention heads for each attention layer in the Transformer encoder.               
+    n_layer (:obj:`int`, `optional`, defaults to 12):
+            Number of hidden layers in the Transformer encoder.    
+    '''
+
+    sequece_length = model_config['n_positions']
+    hidden_states = model_config['n_embd']
+    num_heads = model_config['n_head']
+    attn_head_size = hidden_states // num_heads
+    num_layers = model_config['n_layer']
+
+    return sequece_length, hidden_states, num_heads, attn_head_size, num_layers
+
+
+'''
+TODO: Adding finer-grained operators that have already been implemented on main branch (vocabulary and so on)
+TODO: Considering input_databytes and output_databytes
+'''
+
+
+class attention():
+
+    '''
+    https://huggingface.co/transformers/v2.9.1/quickstart.html#using-the-past
+    '''
+
+    def __init__(self, databytes, hidden_states, num_heads, attn_head_size, use_cache):
+        self.databytes = databytes
+        self.hidden_states = hidden_states
+        self.num_heads = num_heads
+        self.attn_head_size = attn_head_size
+        self.use_cache = use_cache
+
+        # ops of tensor such as gemm
+        self.cal_tensor = 0
+        # ops of vector such as softmax
+        # NOTE: this version just considered no extra weights
+        self.cal_vector = 0
+        # ops of reorder such as transpose
+        self.cal_reorder = 0
+
+        # task input
+        self.task = 1
+        self.length = 0
+
+    def cal(self, batch_size, sequence_length):
+        self.cal_tensor = 0
+        self.cal_vector = 0
+        self.cal_reorder = 0
+
+        self.batch_size = batch_size
+
+        if not self.use_cache:
+            self.sequence_length = sequence_length # make sure it's the same with given value
+            if self.task == 1: # task indicates whether it is the first output token           
+                # LN
+                self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3) # TODO: maybe can be more accurate both for mem_temp and cal_vector
+                
+                # q, k, v
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 3
+
+                # Q * K^T    for temporary memory consumption: new results will overlap the old ones and the computation of mem_temp will follow the sequence
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.sequence_length
+
+                # mask
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length  
+
+                '''
+                TODO: should consider multi-head (reorder cost)
+                '''
+                # softmax
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length * 3
+
+                # softmax * V
+                self.cal_tensor += self.batch_size * self.sequence_length * self.sequence_length * 2 * self.hidden_states
+
+                # c_proj: another linear layer
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states
+                self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+
+                # residual add
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+                
+                # communication
+                self.task = 0
+
+            else:
+                # LN
+                self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+                
+                # q, k, v
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 3
+
+                # Q * K^T
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.sequence_length
+
+                # mask
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length
+
+                '''
+                TODO: should consider multi-head (reorder cost)
+                '''
+                # softmax
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length * 3
+
+                # softmax * V
+                self.cal_tensor += self.batch_size * self.sequence_length * self.sequence_length * 2 * self.hidden_states
+
+                # c_proj
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states
+                self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+
+                # residual add
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+                
+                # communication
+                self.task = 0
+
+        else:
+            if self.task == 1:
+                
+                self.sequence_length = sequence_length
+                # LN
+                self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+                
+                # q, k, v
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 3
+
+                # Q * K^T
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.sequence_length
+
+                # mask
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length
+
+                '''
+                TODO: should consider multi-head (reorder cost)
+                '''
+                # softmax
+                self.cal_vector += self.batch_size * self.sequence_length * self.sequence_length * 3
+
+                # softmax * V
+                self.cal_tensor += self.batch_size * self.sequence_length * self.sequence_length * 2 * self.hidden_states
+
+                # c_proj
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states
+                self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+
+                # residual add
+                self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+                
+                # communication
+
+                # KV-cache
+                self.task = 0
+
+            else:
+                '''
+                note that now the sequence length should be added from one (KV cache stores the former part)
+                '''
+                self.sequence_length += 1 # self.sequence_length keeps increasing and the sequence_length will be 1 all the time
+                # LN
+                self.cal_vector += self.batch_size * sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+                
+                # q, k, v
+                self.cal_tensor += self.batch_size * sequence_length * self.hidden_states * 2 * self.hidden_states * 3
+
+                # Q * K^T
+                self.cal_tensor += self.batch_size * sequence_length * self.hidden_states * 2 * self.sequence_length
+
+                # mask
+                self.cal_vector += self.batch_size * sequence_length * self.sequence_length
+
+                # softmax
+                self.cal_vector += self.batch_size * sequence_length * self.sequence_length * 3
+
+                # softmax * V
+                self.cal_tensor += self.batch_size * sequence_length * self.sequence_length * 2 * self.hidden_states
+
+                # c_proj
+                self.cal_tensor += self.batch_size * sequence_length * self.hidden_states * 2 * self.hidden_states
+                self.cal_reorder += self.batch_size * sequence_length * self.hidden_states    # dropout
+
+                # residual add
+                self.cal_tensor += self.batch_size * sequence_length * self.hidden_states
+                
+                # communication
+
+                # KV-cache
+                self.task = 0
+
+
+class mlp():
+
+    def __init__(self, databytes, hidden_states):
+        self.databytes = databytes
+        self.hidden_states = hidden_states
+
+        # ops of tensor such as gemm
+        self.cal_tensor = 0
+        # ops of vector such as softmax
+        # NOTE: this version just consider no extra weights
+        self.cal_vector = 0
+        # ops of reorder such as transpose
+        self.cal_reorder = 0
+
+        self.task = 1
+
+
+    def cal(self, batch_size, sequence_length):
+        self.cal_tensor = 0
+        self.cal_vector = 0
+        self.cal_reorder = 0
+
+        self.batch_size = batch_size
+        self.sequence_length = sequence_length
+
+        if self.task == 1:
+            # LN
+            self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+
+            # c_fc
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 4
+
+            # gelu
+            self.cal_vector += self.batch_size * self.sequence_length * self.hidden_states * 4 * 8
+
+            # c_proj
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 4 * 2 * self.hidden_states
+            self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+
+            # residual add
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+
+            # communication
+            self.task = 0
+
+        else:
+            # LN
+            self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+
+            # c_fc
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 4
+
+            # gelu
+            self.cal_vector += self.batch_size * self.sequence_length * self.hidden_states * 4 * 8
+
+            # c_proj
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 4 * 2 * self.hidden_states
+            self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+            # residual add
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+
+            # communication
+            self.task = 0
+
+
+class moe():
+
+    def __init__(self, databytes, hidden_states):
+        self.databytes = databytes
+        self.hidden_states = hidden_states
+
+        # ops of tensor such as gemm
+        self.cal_tensor = 0
+        # ops of vector such as softmax
+        # NOTE: this version just consider no extra weights
+        self.cal_vector = 0
+        # ops of reorder such as transpose
+        self.cal_reorder = 0
+
+        self.task = 1
+
+
+    def cal(self, batch_size, sequence_length, topk):
+        self.cal_tensor = 0
+        self.cal_vector = 0
+        self.cal_reorder = 0
+
+        self.batch_size = batch_size
+        self.sequence_length = sequence_length
+        self.topk = topk
+
+        if self.task == 1:
+            # LN
+            self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+
+            # c_fc
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 4
+
+            # gelu
+            self.cal_vector += self.batch_size * self.sequence_length * self.hidden_states * 4 * 8
+
+            # c_proj
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 4 * 2 * self.hidden_states
+            self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+
+            # residual add
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+
+            # communication
+            self.task = 0
+
+        else:
+            # LN
+            self.cal_vector += self.batch_size * self.sequence_length * (self.hidden_states * 2 + self.hidden_states * 5 + self.hidden_states * 3)
+
+            # c_fc
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.hidden_states * 4
+
+            # gelu
+            self.cal_vector += self.batch_size * self.sequence_length * self.hidden_states * 4 * 8
+
+            # c_proj
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 4 * 2 * self.hidden_states
+            self.cal_reorder += self.batch_size * self.sequence_length * self.hidden_states    # dropout
+            # residual add
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states
+
+            # communication
+            self.task = 0
+
+        self.cal_tensor *= self.topk
+        self.cal_vector *= self.topk
+        self.cal_reorder *= self.topk
+
+
+class embedding():
+
+    def __init__(self, databytes, vocab_size, hidden_states):
+
+        self.databytes = databytes
+        self.vocab_size = vocab_size
+        self.hidden_states = hidden_states
+
+        # ops of tensor such as gemm
+        self.cal_tensor = 0
+        # ops of vector
+        self.cal_vector = 0
+        # ops of reorder such as transpose
+        self.cal_reorder = 0
+
+
+    def cal(self, batch_size, sequence_length):
+        self.cal_tensor = 0
+        self.cal_vector = 0
+        self.cal_reorder = 0
+
+        self.batch_size = batch_size
+        self.sequence_length = sequence_length
+
+        # embedding
+        self.cal_reorder += self.batch_size * self.sequence_length * self.vocab_size # TODO: cost should be checked
+
+        # communication
+
+
+class lm_head():
+
+    def __init__(self, databytes, vocab_size, hidden_states):
+        self.databytes = databytes
+        self.hidden_states = hidden_states
+        self.vocab_size = vocab_size
+
+        # ops of tensor such as gemm
+        self.cal_tensor = 0
+        # ops of vector such as softmax
+        # NOTE: this version just consider no extra weights
+        self.cal_vector = 0
+        # ops of reorder such as transpose
+        self.cal_reorder = 0
+
+        self.task = 1
+
+
+    def cal(self, batch_size, sequence_length):
+        self.cal_tensor = 0
+        self.cal_vector = 0
+        self.cal_reorder = 0
+
+        self.batch_size = batch_size
+        self.sequence_length = sequence_length
+
+        if self.task == 1:
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.vocab_size
+
+            # communication
+            self.task = 0
+
+        else:
+            
+            self.cal_tensor += self.batch_size * self.sequence_length * self.hidden_states * 2 * self.vocab_size
+
+            # communication
+            self.task = 0
+
+
+
+if __name__ == '__main__':
+
+    databytes = 2
+    batch_size = 1
+    use_cache = False
+
+    model_name = 'gpt2-xl'
+    # model_name = 'deepspeedmoe-6.7b'
+    sequece_length, hidden_states, num_heads, attn_head_size, num_layers = get_gpt_parameter(model_name)
+    # print(f"sequece_length: {sequece_length}")
+    # print(f"hidden_states: {hidden_states}")
+    # print(f"num_heads: {num_heads}")
+    # print(f"attn_head_size: {attn_head_size}")
+    # print(f"num_layers: {num_layers}")
+
+
+    test_a = attention(databytes=databytes, hidden_states=hidden_states, num_heads=num_heads, attn_head_size=attn_head_size, use_cache=use_cache)
+    test_a.cal(1, 50)
+    print(test_a.cal_tensor)
+    test_a.cal(1, 1)
+    print(test_a.cal_tensor)
+
+    test_b = mlp(databytes=databytes, hidden_states=hidden_states)
+    test_b.cal(1, 50)
+    print(test_b.cal_tensor)
+    test_b.cal(1, 1)
+    print(test_b.cal_tensor)
+
