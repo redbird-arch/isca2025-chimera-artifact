@@ -50,6 +50,7 @@ build a new conda environment
 conda create --name Chimera python=3.9
 conda activate Chimera
 pip install -r requirements.txt
+conda install -c conda-forge flex bison
 ```
 compile BookSim2
 ``` bash
@@ -61,7 +62,7 @@ cd ../../../../../
 ## Reproduce the simulation results of the paper
 ``` bash
 cd ./src/User/Chimera/experiment
-source run-all.sh
+bash run-all.sh
 ```
 
 
@@ -73,7 +74,7 @@ We use one 8&times;RTX4080 GPU node for the real machine tests which have the to
 To reproduce the real-machine test results
 ```bash
 cd ./Real_Perf
-source run_all.sh
+bash run-all.sh
 ```
 
 
@@ -83,5 +84,5 @@ To reproduce the pictures, please reproduce all the results before.
 ``` bash
 cd ./src/User/Chimera/experiment/Pictures
 conda activate Chimera
-source plot-figure.sh
+bash plot-figure.sh
 ```
