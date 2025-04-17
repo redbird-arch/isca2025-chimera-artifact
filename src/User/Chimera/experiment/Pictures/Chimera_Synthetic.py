@@ -6,7 +6,7 @@ import numpy as np
 # Define the directory containing the files
 file_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(file_path, '../'))
-directory_path = os.path.join(file_path, "../ISCA25_Synthetic/txt/Synthetic/")
+directory_path = os.path.join(file_path, "../ISCA25_Synthetic/txt")
 
 pattern_strategy = {
     "tp": ["alpa", "fusion"],
