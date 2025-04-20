@@ -35,6 +35,11 @@
 
 ## Simulation Setup
 
+### Overall Workflow
+
+In `./src/User/Chimera/experiment` directory, there are four `ISCA25_*` directories which match Synthetic (Figure 10), Forward Pass (Figure 11), End-to-End results (Figure 11(a)), and End-to-End results with pipeline overlapping (Figure 11(b)), respectively. Each directory contains its corresponding configuration files (`cfg`), experiment scripts (`py`), and results (`txt`). After finishing all the experiments, the figure scripts in `./src/User/Chimera/experiment/Pictures` use results in the four `txt` directories to reproduce the figures.
+
+
 ### Update directory path
 
 ``` bash
@@ -53,13 +58,15 @@ pip install -r requirements.txt
 conda install -c conda-forge flex bison
 ```
 compile BookSim2
+
 ``` bash
 cd ./src/communication/backend/booksim2/src
 make libdbg
 cd ../../../../../
 ```
 
-## Reproduce the simulation results of the paper
+
+### Reproduce the simulation results of the paper
 ``` bash
 cd ./src/User/Chimera/experiment
 bash run-all.sh
