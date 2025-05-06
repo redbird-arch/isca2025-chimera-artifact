@@ -12,7 +12,7 @@ pp = 2
 embedding_size = 2048
 sequence = 2048
 # total seq = 8192
-batch_size = 128
+batch_size = 112
 # total bs = 256
 node_num = 8
 
@@ -20,23 +20,19 @@ PP_Group_1 = [0,2,4,6]
 PP_Group_2 = [1,3,5,7]
 
 
-def Original(input_tensor, rank):
-    output_tensor_list = [torch.empty_like(input_tensor) for _ in range(sp)]
+def Original(input_tensor, rank, output_tensor_list1):
 
     # Ensure that the group creation (torch.distributed.new_group) is called consistently across all processes. 
     # group creation cannot be in "if rank < int(node_num/2):"
     SP_group_1 = torch.distributed.new_group(ranks=PP_Group_1)
-    # SP_group_2 = torch.distributed.new_group(ranks=[4,5,6,7])
+    SP_group_2 = torch.distributed.new_group(ranks=PP_Group_2)
+    output_tensor_1 = torch.cat(output_tensor_list1,dim=0)
 
     if rank in PP_Group_1:
-        dist.all_gather(output_tensor_list, input_tensor, group=SP_group_1)
-    # else:
-    #     dist.all_gather(output_tensor_list, input_tensor, group=SP_group_2)
+        dist.all_gather(output_tensor_list1, input_tensor, group=SP_group_1)
+    else:
+        dist.all_gather(output_tensor_list1, input_tensor, group=SP_group_2)
 
-    # dist.all_gather_into_tensor --- Gather tensors from all ranks and put them in a single output tensor.
-
-    output_tensor_1 = torch.cat(output_tensor_list,dim=0)
-    # del output_tensor_list
 
     if rank in PP_Group_1:
         dist.send(tensor=output_tensor_1, dst=PP_Group_2[PP_Group_1.index(rank)])
@@ -47,8 +43,7 @@ def Original(input_tensor, rank):
 
 
 
-def Fusion(input_tensor, rank):
-    output_tensor = [torch.empty_like(input_tensor) for _ in range(sp)]
+def Fusion(input_tensor, rank, output_tensor2):
 
     reqs = []
 
@@ -58,13 +53,13 @@ def Fusion(input_tensor, rank):
             reqs.append(req)
     else:
         for i in range(int(node_num/2)):
-            req = dist.irecv(tensor=output_tensor[i], src=PP_Group_1[i])
+            req = dist.irecv(tensor=output_tensor2[i], src=PP_Group_1[i])
             reqs.append(req)
 
     for req in reqs:
         req.wait()
 
-    return output_tensor
+    return output_tensor2
 
 
 
@@ -88,10 +83,15 @@ if __name__ == '__main__':
     
 
     input_tensor = torch.rand(batch_size * sequence, embedding_size).cuda()
+    output_tensor_list1 = [torch.empty_like(input_tensor) for _ in range(sp)]
+
+    output_tensor2 = [torch.empty_like(input_tensor) for _ in range(sp)]
+
+
 
     dist.barrier()
     start = time.time()
-    output = Original(input_tensor, rank)
+    output = Original(input_tensor, rank, output_tensor_list1)
     dist.barrier()
     if dist.get_rank()== 0:
         print(f'Original Time:{time.time()-start}')
@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
     dist.barrier()
     start = time.time()
-    output = Fusion(input_tensor, rank)
+    output = Fusion(input_tensor, rank, output_tensor2)
     dist.barrier()
     if dist.get_rank()== 0:
         print('Fusion Time:', time.time()-start)

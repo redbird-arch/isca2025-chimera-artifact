@@ -1,1200 +1,1200 @@
 Run 1:
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.393122673034668
-Fusion Time: 4.558461666107178
+Original Time:1.1668915748596191
+Fusion Time: 0.7107517719268799
 -----------------------------------
 Run 2:
 RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8RANK and WORLD_SIZE in environ: 5/8
+
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.356296062469482
-Fusion Time: 4.475869178771973
+Original Time:1.1281993389129639
+Fusion Time: 0.7051188945770264
 -----------------------------------
 Run 3:
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.359684228897095
-Fusion Time: 4.402398347854614
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.2154970169067383
+Fusion Time: 0.7043378353118896
 -----------------------------------
 Run 4:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.303834915161133
-Fusion Time: 4.49359917640686
+RANK and WORLD_SIZE in environ: 2/8
+Original Time:1.1931302547454834
+Fusion Time: 0.7129664421081543
 -----------------------------------
 Run 5:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.347129344940186
-Fusion Time: 4.622496843338013
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1726391315460205
+Fusion Time: 0.7075059413909912
 -----------------------------------
 Run 6:
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.41495966911316
-Fusion Time: 4.4554033279418945
+Original Time:1.1391119956970215
+Fusion Time: 0.6981823444366455
 -----------------------------------
 Run 7:
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.366285562515259
-Fusion Time: 4.593634366989136
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1599483489990234
+Fusion Time: 0.7235887050628662
 -----------------------------------
 Run 8:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.441282510757446
-Fusion Time: 4.380520820617676
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1806328296661377
+Fusion Time: 0.729942798614502
 -----------------------------------
 Run 9:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.362159252166748
-Fusion Time: 4.420450925827026
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.1836063861846924
+Fusion Time: 0.7479920387268066
 -----------------------------------
 Run 10:
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.463112115859985
-Fusion Time: 4.438159465789795
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.173403263092041
+Fusion Time: 0.7249569892883301
 -----------------------------------
 Run 11:
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.327069520950317
-Fusion Time: 4.413811445236206
+Original Time:1.1927704811096191
+Fusion Time: 0.7147178649902344
 -----------------------------------
 Run 12:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.401700496673584
-Fusion Time: 4.498955488204956
+Original Time:1.1718671321868896
+Fusion Time: 0.7229838371276855
 -----------------------------------
 Run 13:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.403930187225342
-Fusion Time: 4.375063180923462
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.1462082862854004
+Fusion Time: 0.7493391036987305
 -----------------------------------
 Run 14:
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.353612661361694
-Fusion Time: 4.484250068664551
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.17020583152771
+Fusion Time: 0.6947054862976074
 -----------------------------------
 Run 15:
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 6/8RANK and WORLD_SIZE in environ: 2/8
-
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.452363967895508
-Fusion Time: 4.476914644241333
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
+Original Time:1.1818640232086182
+Fusion Time: 0.7010910511016846
 -----------------------------------
 Run 16:
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.361645460128784
-Fusion Time: 4.496339559555054
+Original Time:1.1632025241851807
+Fusion Time: 0.7619616985321045
 -----------------------------------
 Run 17:
-RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.204407215118408
-Fusion Time: 4.423184871673584
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1777539253234863
+Fusion Time: 0.701012372970581
 -----------------------------------
 Run 18:
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.23462462425232
-Fusion Time: 4.3946239948272705
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+Original Time:1.1530394554138184
+Fusion Time: 0.7027969360351562
 -----------------------------------
 Run 19:
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8RANK and WORLD_SIZE in environ: 0/8
+
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.304532766342163
-Fusion Time: 4.415302276611328
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1595029830932617
+Fusion Time: 0.7226691246032715
 -----------------------------------
 Run 20:
+RANK and WORLD_SIZE in environ: 5/8RANK and WORLD_SIZE in environ: 3/8
+
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.335157632827759
-Fusion Time: 4.41244101524353
+Original Time:1.1617944240570068
+Fusion Time: 0.7237825393676758
 -----------------------------------
 Run 21:
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.301380157470703
-Fusion Time: 4.3978071212768555
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.1974315643310547
+Fusion Time: 0.689204216003418
 -----------------------------------
 Run 22:
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.404882669448853
-Fusion Time: 4.614362478256226
+Original Time:1.1587798595428467
+Fusion Time: 0.7361602783203125
 -----------------------------------
 Run 23:
-RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.41056513786316
-Fusion Time: 4.437718868255615
+Original Time:1.1817238330841064
+Fusion Time: 0.6910443305969238
 -----------------------------------
 Run 24:
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8RANK and WORLD_SIZE in environ: 5/8
+
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.547734260559082
-Fusion Time: 4.440720319747925
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.1372928619384766
+Fusion Time: 0.6809539794921875
 -----------------------------------
 Run 25:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8RANK and WORLD_SIZE in environ: 7/8
+
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.41283917427063
-Fusion Time: 4.537421226501465
+Original Time:1.1622705459594727
+Fusion Time: 0.7156455516815186
 -----------------------------------
 Run 26:
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.345541000366211
-Fusion Time: 4.493166923522949
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.187242031097412
+Fusion Time: 0.6987512111663818
 -----------------------------------
 Run 27:
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.343129873275757
-Fusion Time: 4.419541597366333
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.207604169845581
+Fusion Time: 0.788818359375
 -----------------------------------
 Run 28:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.291406154632568
-Fusion Time: 4.445860147476196
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.172032117843628
+Fusion Time: 0.6820211410522461
 -----------------------------------
 Run 29:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.388704538345337
-Fusion Time: 4.441895008087158
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1966733932495117
+Fusion Time: 0.7147164344787598
 -----------------------------------
 Run 30:
-RANK and WORLD_SIZE in environ: 0/8RANK and WORLD_SIZE in environ: 6/8
-
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:9.565173864364624
-Fusion Time: 4.563141822814941
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1890170574188232
+Fusion Time: 0.7220666408538818
 -----------------------------------
 Run 31:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 1/8RANK and WORLD_SIZE in environ: 0/8
-
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.3067467212677
-Fusion Time: 4.4776012897491455
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1875450611114502
+Fusion Time: 0.7227654457092285
 -----------------------------------
 Run 32:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.393601655960083
-Fusion Time: 4.560625314712524
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1361587047576904
+Fusion Time: 0.6967144012451172
 -----------------------------------
 Run 33:
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.365853548049927
-Fusion Time: 4.501518249511719
+Original Time:1.1573317050933838
+Fusion Time: 0.698216438293457
 -----------------------------------
 Run 34:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.469645977020264
-Fusion Time: 4.482428073883057
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1518690586090088
+Fusion Time: 0.6875717639923096
 -----------------------------------
 Run 35:
 RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.334115982055664
-Fusion Time: 4.558184623718262
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.169938087463379
+Fusion Time: 0.6906774044036865
 -----------------------------------
 Run 36:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.414477825164795
-Fusion Time: 4.3407580852508545
+RANK and WORLD_SIZE in environ: 4/8RANK and WORLD_SIZE in environ: 6/8
+
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1783335208892822
+Fusion Time: 0.7024695873260498
 -----------------------------------
 Run 37:
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.318516969680786
-Fusion Time: 4.3224687576293945
+Original Time:1.132993221282959
+Fusion Time: 0.6890573501586914
 -----------------------------------
 Run 38:
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.418933391571045
-Fusion Time: 4.531217336654663
+Original Time:1.147306203842163
+Fusion Time: 0.7386834621429443
 -----------------------------------
 Run 39:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.387308359146118
-Fusion Time: 4.498972415924072
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1542737483978271
+Fusion Time: 0.7000002861022949
 -----------------------------------
 Run 40:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.500973224639893
-Fusion Time: 4.403601169586182
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.1413331031799316
+Fusion Time: 0.6985559463500977
 -----------------------------------
 Run 41:
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.31826138496399
-Fusion Time: 4.35925030708313
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1616458892822266
+Fusion Time: 0.6890168190002441
 -----------------------------------
 Run 42:
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 0/8RANK and WORLD_SIZE in environ: 3/8
-
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.380443096160889
-Fusion Time: 4.484637498855591
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.2207133769989014
+Fusion Time: 0.7317066192626953
 -----------------------------------
 Run 43:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.381246328353882
-Fusion Time: 4.465049743652344
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1836776733398438
+Fusion Time: 0.7386302947998047
 -----------------------------------
 Run 44:
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.625130891799927
-Fusion Time: 4.500880479812622
+Original Time:1.1404685974121094
+Fusion Time: 0.6811263561248779
 -----------------------------------
 Run 45:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.397390365600586
-Fusion Time: 4.504275798797607
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1421458721160889
+Fusion Time: 0.6970272064208984
 -----------------------------------
 Run 46:
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8RANK and WORLD_SIZE in environ: 7/8
+
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.469881534576416
-Fusion Time: 4.461169958114624
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.2035763263702393
+Fusion Time: 0.7252421379089355
 -----------------------------------
 Run 47:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.365208625793457
-Fusion Time: 4.383150815963745
+Original Time:1.1435902118682861
+Fusion Time: 0.7087831497192383
 -----------------------------------
 Run 48:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.436776399612427
-Fusion Time: 4.492027997970581
+Original Time:1.1426336765289307
+Fusion Time: 0.6907188892364502
 -----------------------------------
 Run 49:
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.412640571594238
-Fusion Time: 4.568603754043579
+Original Time:1.1725146770477295
+Fusion Time: 0.7530946731567383
 -----------------------------------
 Run 50:
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.382436037063599
-Fusion Time: 4.473012447357178
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1507585048675537
+Fusion Time: 0.7212257385253906
 -----------------------------------
 Run 51:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.347309827804565
-Fusion Time: 4.402483701705933
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1787521839141846
+Fusion Time: 0.7010924816131592
 -----------------------------------
 Run 52:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8RANK and WORLD_SIZE in environ: 2/8
+
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.270309686660767
-Fusion Time: 4.479116678237915
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1938550472259521
+Fusion Time: 0.7102456092834473
 -----------------------------------
 Run 53:
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8RANK and WORLD_SIZE in environ: 3/8
-
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.325845003128052
-Fusion Time: 4.247055768966675
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.2012970447540283
+Fusion Time: 0.7513585090637207
 -----------------------------------
 Run 54:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.351195573806763
-Fusion Time: 4.442967891693115
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1694402694702148
+Fusion Time: 0.7185075283050537
 -----------------------------------
 Run 55:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8RANK and WORLD_SIZE in environ: 3/8
-
-Original Time:10.31794023513794
-Fusion Time: 4.411289930343628
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 4/8
+Original Time:1.1513385772705078
+Fusion Time: 0.767707347869873
 -----------------------------------
 Run 56:
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.398029327392578
-Fusion Time: 4.520546913146973
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1273932456970215
+Fusion Time: 0.7412064075469971
 -----------------------------------
 Run 57:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.354407787322998
-Fusion Time: 4.583500385284424
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.1752748489379883
+Fusion Time: 0.7006022930145264
 -----------------------------------
 Run 58:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.328786611557007
-Fusion Time: 4.481525897979736
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.1799919605255127
+Fusion Time: 0.7050821781158447
 -----------------------------------
 Run 59:
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.423174619674683
-Fusion Time: 4.391216039657593
+Original Time:1.1647889614105225
+Fusion Time: 0.7102923393249512
 -----------------------------------
 Run 60:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.353527307510376
-Fusion Time: 4.5153632164001465
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1818523406982422
+Fusion Time: 0.7025079727172852
 -----------------------------------
 Run 61:
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.343602657318115
-Fusion Time: 4.455247640609741
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1357331275939941
+Fusion Time: 0.7015104293823242
 -----------------------------------
 Run 62:
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.353419303894043
-Fusion Time: 4.529253721237183
+Original Time:1.1585383415222168
+Fusion Time: 0.8410212993621826
 -----------------------------------
 Run 63:
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.34305453300476
-Fusion Time: 4.465310335159302
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.18332839012146
+Fusion Time: 0.7330913543701172
 -----------------------------------
 Run 64:
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:9.22200894355774
-Fusion Time: 4.429961919784546
+Original Time:1.1343474388122559
+Fusion Time: 0.7222719192504883
 -----------------------------------
 Run 65:
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.379019021987915
-Fusion Time: 4.5207741260528564
+Original Time:1.1349916458129883
+Fusion Time: 0.711735725402832
 -----------------------------------
 Run 66:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.406456232070923
-Fusion Time: 4.574997901916504
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1481986045837402
+Fusion Time: 0.7104148864746094
 -----------------------------------
 Run 67:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.372401714324951
-Fusion Time: 4.490773916244507
+Original Time:1.1695857048034668
+Fusion Time: 0.7299354076385498
 -----------------------------------
 Run 68:
 RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.405208110809326
-Fusion Time: 4.429986476898193
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1538920402526855
+Fusion Time: 0.7416038513183594
 -----------------------------------
 Run 69:
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.38944149017334
-Fusion Time: 4.3919806480407715
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1898925304412842
+Fusion Time: 0.7919228076934814
 -----------------------------------
 Run 70:
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.344110250473022
-Fusion Time: 4.477509021759033
+Original Time:1.1770453453063965
+Fusion Time: 0.6975889205932617
 -----------------------------------
 Run 71:
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.299221992492676
-Fusion Time: 4.543569803237915
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.151291847229004
+Fusion Time: 0.6731691360473633
 -----------------------------------
 Run 72:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.440507411956787
-Fusion Time: 4.513171911239624
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.1623499393463135
+Fusion Time: 0.6836774349212646
 -----------------------------------
 Run 73:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8RANK and WORLD_SIZE in environ: 2/8
-
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.389856576919556
-Fusion Time: 4.3216552734375
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.1874232292175293
+Fusion Time: 0.7052392959594727
 -----------------------------------
 Run 74:
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8RANK and WORLD_SIZE in environ: 1/8
-
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.429023027420044
-Fusion Time: 4.453419923782349
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+Original Time:1.1496074199676514
+Fusion Time: 0.7724466323852539
 -----------------------------------
 Run 75:
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.3817880153656
-Fusion Time: 4.4190285205841064
+Original Time:1.1619548797607422
+Fusion Time: 0.7055273056030273
 -----------------------------------
 Run 76:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.599794149398804
-Fusion Time: 4.439764738082886
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1891567707061768
+Fusion Time: 0.6969645023345947
 -----------------------------------
 Run 77:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.453171014785767
-Fusion Time: 4.553480625152588
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.183436632156372
+Fusion Time: 0.7189598083496094
 -----------------------------------
 Run 78:
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.47021198272705
-Fusion Time: 4.509918689727783
+Original Time:1.1647264957427979
+Fusion Time: 0.7295129299163818
 -----------------------------------
 Run 79:
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8RANK and WORLD_SIZE in environ: 5/8
-
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.40581202507019
-Fusion Time: 4.4718005657196045
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.1594295501708984
+Fusion Time: 0.7101154327392578
 -----------------------------------
 Run 80:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.362692832946777
-Fusion Time: 4.459655523300171
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.166802167892456
+Fusion Time: 0.7442319393157959
 -----------------------------------
 Run 81:
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.431672096252441
-Fusion Time: 4.554260969161987
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.1539185047149658
+Fusion Time: 0.7196569442749023
 -----------------------------------
 Run 82:
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.307516098022461
-Fusion Time: 4.510461330413818
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.144526481628418
+Fusion Time: 0.6932122707366943
 -----------------------------------
 Run 83:
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
-Original Time:10.535216093063354
-Fusion Time: 4.570049524307251
+Original Time:1.1803054809570312
+Fusion Time: 0.7088305950164795
 -----------------------------------
 Run 84:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.386058568954468
-Fusion Time: 4.415935754776001
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+Original Time:1.1856586933135986
+Fusion Time: 0.7214105129241943
 -----------------------------------
 Run 85:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.372817754745483
-Fusion Time: 4.424578666687012
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1460609436035156
+Fusion Time: 0.7156839370727539
 -----------------------------------
 Run 86:
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
-Original Time:10.293627500534058
-Fusion Time: 4.524805545806885
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1894731521606445
+Fusion Time: 0.70552659034729
 -----------------------------------
 Run 87:
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.381691694259644
-Fusion Time: 4.537647485733032
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 2/8
+Original Time:1.1314783096313477
+Fusion Time: 0.6934754848480225
 -----------------------------------
 Run 88:
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.278520107269287
-Fusion Time: 4.479675531387329
+Original Time:1.1478385925292969
+Fusion Time: 0.7360508441925049
 -----------------------------------
 Run 89:
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.500370979309082
-Fusion Time: 4.4353296756744385
+Original Time:1.1229722499847412
+Fusion Time: 0.7121801376342773
 -----------------------------------
 Run 90:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.409296035766602
-Fusion Time: 4.45146369934082
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.139091968536377
+Fusion Time: 0.7496364116668701
 -----------------------------------
 Run 91:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 7/8
-Original Time:10.381716966629028
-Fusion Time: 4.416815519332886
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.174588918685913
+Fusion Time: 0.7136225700378418
 -----------------------------------
 Run 92:
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.430726528167725
-Fusion Time: 4.460186004638672
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+Original Time:1.1371278762817383
+Fusion Time: 0.6856110095977783
 -----------------------------------
 Run 93:
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 4/8
+RANK and WORLD_SIZE in environ: 3/8RANK and WORLD_SIZE in environ: 6/8
+
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
-Original Time:10.37268352508545
-Fusion Time: 4.466438293457031
+Original Time:1.1374919414520264
+Fusion Time: 0.7711009979248047
 -----------------------------------
 Run 94:
-RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.294934749603271
-Fusion Time: 4.415004253387451
+Original Time:1.1693947315216064
+Fusion Time: 0.6907868385314941
 -----------------------------------
 Run 95:
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:9.738689661026001
-Fusion Time: 4.50757360458374
+Original Time:1.1848316192626953
+Fusion Time: 0.6852126121520996
 -----------------------------------
 Run 96:
 RANK and WORLD_SIZE in environ: 7/8
-RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 3/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.37484622001648
-Fusion Time: 4.603575944900513
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 3/8
+Original Time:1.1667630672454834
+Fusion Time: 0.810377836227417
 -----------------------------------
 Run 97:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
-RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
-RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 4/8
-Original Time:10.418397426605225
-Fusion Time: 4.380405902862549
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 6/8
+Original Time:1.1682658195495605
+Fusion Time: 0.68630051612854
 -----------------------------------
 Run 98:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 2/8
+RANK and WORLD_SIZE in environ: 2/8RANK and WORLD_SIZE in environ: 7/8
+
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 0/8
 RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 6/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 1/8
-Original Time:10.403520107269287
-Fusion Time: 4.502468585968018
+Original Time:1.1629858016967773
+Fusion Time: 0.6996219158172607
 -----------------------------------
 Run 99:
-RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 3/8
-RANK and WORLD_SIZE in environ: 7/8
 RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 4/8
-RANK and WORLD_SIZE in environ: 2/8
 RANK and WORLD_SIZE in environ: 0/8
-Original Time:10.404635429382324
-Fusion Time: 4.476407289505005
+RANK and WORLD_SIZE in environ: 6/8
+RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 5/8
+RANK and WORLD_SIZE in environ: 2/8
+Original Time:1.1727890968322754
+Fusion Time: 0.6889522075653076
 -----------------------------------
 Run 100:
-RANK and WORLD_SIZE in environ: 1/8
-RANK and WORLD_SIZE in environ: 0/8
-RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 3/8
+RANK and WORLD_SIZE in environ: 5/8
 RANK and WORLD_SIZE in environ: 4/8
 RANK and WORLD_SIZE in environ: 6/8
-RANK and WORLD_SIZE in environ: 7/8
+RANK and WORLD_SIZE in environ: 1/8
 RANK and WORLD_SIZE in environ: 2/8
-Original Time:10.383613109588623
-Fusion Time: 4.414747476577759
+RANK and WORLD_SIZE in environ: 0/8
+RANK and WORLD_SIZE in environ: 7/8
+Original Time:1.181246280670166
+Fusion Time: 0.7110762596130371
 -----------------------------------

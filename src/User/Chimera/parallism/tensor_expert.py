@@ -14,6 +14,7 @@ sys.path.append(os.path.join(file_path, '../../../components/'))
 from typing import List, Tuple
 
 from reducescatter import reducescatter, reducelocal
+from allgather import allgather
 from allreduce import allreduce
 from alltoall import ordertoorder, alltoall
 
@@ -27,6 +28,7 @@ class tensor_expert(object):
         self.allreduce = allreduce(topology, algorithm["allreduce"])
         self.alltoall = alltoall(topology, algorithm["alltoall"])
         self.reducescatter = reducescatter(topology, algorithm["reducescatter"])
+        self.allgather = allgather(topology, algorithm["allgather"])
         self.ordertoorder = ordertoorder(topology, algorithm["ordertoorder"])
         self.reducelocal = reducelocal(topology, algorithm["reducelocal"])
 
@@ -101,18 +103,17 @@ class tensor_expert(object):
                         group_node_idx = group_node_y * source_x_number + group_node_x
                         allreduce_dependency_list[group_node_y][group_node_x] = group_allreduce_dependency_list[y_idx][x_idx]
 
-        # first ordertoorder
-        ordertoorder_event_tag, ordertoorder_dependency_list = self.ordertoorder.cal_time(
+        # first alltoall
+        alltoall_event_tag, alltoall_dependency_list = self.alltoall.cal_time(
             whole_nodes=whole_nodes, current_event_tag=group_allreduce_event_tag, current_dependency_list=allreduce_dependency_list,
             source_nodes_coordinates_list=source_nodes_coordinates_list,
             source_x_number=source_x_number, source_y_number=source_y_number,
             topology_x_limitation=topology_x_limitation, topology_y_limitation=topology_y_limitation, 
-            data_parallelism_degree=data_parallelism_degree, 
-            message_flits=message_flits*top_k*data_parallelism_degree[0]*data_parallelism_degree[1], 
+            message_flits=message_flits*top_k*data_parallelism_degree[0]*data_parallelism_degree[1]//source_x_number//source_y_number, 
             latency=latency, bandwidth=bandwidth, reduction=reduction
         )
 
-        return ordertoorder_event_tag, ordertoorder_dependency_list
+        return alltoall_event_tag, alltoall_dependency_list
 
 
     def fusion(
@@ -191,12 +192,11 @@ class tensor_expert(object):
             source_nodes_coordinates_list=source_nodes_coordinates_list,
             source_x_number=source_x_number, source_y_number=source_y_number,
             topology_x_limitation=topology_x_limitation, topology_y_limitation=topology_y_limitation, 
-            message_flits=message_flits*top_k*data_parallelism_degree[0]*data_parallelism_degree[1], 
+            message_flits=message_flits*top_k*data_parallelism_degree[0]*data_parallelism_degree[1]//source_x_number//source_y_number, 
             latency=latency, bandwidth=bandwidth, reduction=reduction
         )
 
         return alltoall_event_tag, alltoall_dependency_list
-
 
 
 class tensor_expert_half(object):

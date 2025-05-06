@@ -15,8 +15,7 @@ batch_size = 128
 # total bs = 256
 node_num = 8
 
-def AllGather_All2All_All2All_All2All(input_tensor, rank):
-    output_tensor_list = [torch.empty_like(input_tensor) for _ in range(sp)]
+def AllGather_All2All_All2All_All2All(input_tensor, rank, output_tensor_list):
 
     # Ensure that the group creation (torch.distributed.new_group) is called consistently across all processes. 
     # group creation cannot be in "if rank < int(node_num/2):"
@@ -48,8 +47,7 @@ def AllGather_All2All_All2All_All2All(input_tensor, rank):
     
     return output_tensor_2
 
-def Fusion(input_tensor, rank):
-    output_tensor_1 = torch.empty_like(input_tensor)
+def Fusion(input_tensor, rank, output_tensor_1):
     dist.all_to_all_single(output_tensor_1, input_tensor)
     dist.barrier()
     output_tensor_2 = torch.empty_like(output_tensor_1)
@@ -77,10 +75,12 @@ if __name__ == '__main__':
     
 
     input_tensor = torch.rand(batch_size * sequence, embedding_size).cuda()
+    output_tensor_1 = torch.empty_like(input_tensor)
+    output_tensor_list = [torch.empty_like(input_tensor) for _ in range(sp)]
 
     dist.barrier()
     start = time.time()
-    output = AllGather_All2All_All2All_All2All(input_tensor, rank)
+    output = AllGather_All2All_All2All_All2All(input_tensor, rank, output_tensor_list)
     dist.barrier()
     if dist.get_rank()== 0:
         print(f'AllGather_All2All_All2All_All2All Time:{time.time()-start}')
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
     dist.barrier()
     start = time.time()
-    output = Fusion(input_tensor, rank)
+    output = Fusion(input_tensor, rank, output_tensor_1)
     dist.barrier()
     if dist.get_rank()== 0:
         print('Fusion Time:', time.time()-start)

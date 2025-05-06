@@ -5,7 +5,6 @@ import re
 
 ##################################################################################### TP+EP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/TP+EP.txt'
 
 # Lists to store extracted times
@@ -30,6 +29,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## TP+EP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -62,8 +62,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 2.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 2.0
+interval = 0.5
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -80,7 +80,7 @@ axs.annotate(f'{min_fusion}', xy=(fusion_position, min_fusion), xytext=(-45, -35
 axs.annotate(f'{max_fusion}', xy=(fusion_position, max_fusion), xytext=(-45, 9), textcoords='offset points', fontsize=annotate_size)
 
 # Set title for the plot
-axs.set_title('TP+EP: B=256, S=8192, H=2048', fontsize=43)
+axs.set_title('TP+EP: B=128, S=8192, H=2048', fontsize=43)
 axs.set_ylabel('Communication Time (s)', fontsize=36)
 
 # plt.savefig('TP+EP.png', dpi=400)
@@ -89,7 +89,6 @@ plt.savefig('TP+EP.pdf')
 
 ##################################################################################### TP+PP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/TP+PP.txt'
 
 # Lists to store extracted times
@@ -114,6 +113,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## TP+PP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -146,8 +146,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 1.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 1.0
+interval = 0.5
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -173,7 +173,6 @@ plt.savefig('TP+PP.pdf')
 
 ##################################################################################### TP+SP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/TP+SP.txt'
 
 # Lists to store extracted times
@@ -198,6 +197,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## TP+SP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -229,8 +229,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 2.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 1.2
+interval = 0.5
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -257,7 +257,6 @@ plt.savefig('TP+SP.pdf')
 
 ##################################################################################### SP+EP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/SP+EP.txt'
 
 # Lists to store extracted times
@@ -282,6 +281,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## SP+EP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -314,8 +314,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 1.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 1.2
+interval = 0.5
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -332,7 +332,7 @@ axs.annotate(f'{min_fusion}', xy=(fusion_position, min_fusion), xytext=(-45, -35
 axs.annotate(f'{max_fusion}', xy=(fusion_position, max_fusion), xytext=(-45, 9), textcoords='offset points', fontsize=annotate_size)
 
 # Set title for the plot
-axs.set_title('SP+EP: B=256, S=8192, H=2048', fontsize=43)
+axs.set_title('SP+EP: B=128, S=8192, H=2048', fontsize=43)
 axs.set_ylabel('Communication Time (s)', fontsize=36)
 
 # plt.savefig('SP+EP.png', dpi=400)
@@ -341,7 +341,6 @@ plt.savefig('SP+EP.pdf')
 
 ##################################################################################### PP+EP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/PP+EP.txt'
 
 # Lists to store extracted times
@@ -366,6 +365,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## PP+EP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -398,8 +398,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 1.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.5
+interval = 0.2
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -416,7 +416,7 @@ axs.annotate(f'{min_fusion}', xy=(fusion_position, min_fusion), xytext=(-45, -35
 axs.annotate(f'{max_fusion}', xy=(fusion_position, max_fusion), xytext=(-45, 9), textcoords='offset points', fontsize=annotate_size)
 
 # Set title for the plot
-axs.set_title('PP+EP: B=256, S=8192, H=2048', fontsize=43)
+axs.set_title('PP+EP: B=64, S=8192, H=2048', fontsize=43)
 axs.set_ylabel('Communication Time (s)', fontsize=36)
 
 # plt.savefig('PP+EP.png', dpi=400)
@@ -425,7 +425,6 @@ plt.savefig('PP+EP.pdf')
 
 ##################################################################################### PP+SP
 
-# Suppose the data is read from a file named 'PP+SP.txt'
 file_path = '../../../../../Real_Perf/PP+SP.txt'
 
 # Lists to store extracted times
@@ -459,6 +458,7 @@ speedup_max = max(speedup)
 speedup_avg = sum(speedup) / len(speedup)
 
 # Print the results
+print("########## PP+SP ##########:")
 print("Speedup Min:", speedup_min)
 print("Speedup Max:", speedup_max)
 print("Speedup Avg:", speedup_avg)
@@ -482,8 +482,8 @@ axs.set_xticklabels(['Baseline', 'Fusion'], fontsize=44)  # Labeling axes
 
 # Calculate the min and max values for y-axis
 y_min = 0
-interval = 1.0
-y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 1.0
+interval = 0.5
+y_max = np.ceil(max(max(baseline_times), max(fusion_times)) * 10) / 10 + 0.3
 axs.set_ylim(y_min, y_max)
 axs.set_yticks(np.arange(y_min, y_max, interval))
 axs.set_yticklabels([f'{tick:.1f}' for tick in np.arange(y_min, y_max, interval)], fontsize=36)
@@ -500,7 +500,7 @@ axs.annotate(f'{min_fusion:.2f}', xy=(fusion_position, min_fusion), xytext=(-45,
 axs.annotate(f'{max_fusion:.2f}', xy=(fusion_position, max_fusion), xytext=(-45, 9), textcoords='offset points', fontsize=annotate_size)
 
 # Set title for the plot
-axs.set_title('SP+PP: B=128, S=8192, H=2048', fontsize=43)
+axs.set_title('SP+PP: B=112, S=8192, H=2048', fontsize=43)
 axs.set_ylabel('Communication Time (s)', fontsize=36)
 
 # plt.savefig('PP+SP.png', dpi=400)

@@ -18,61 +18,39 @@ batch_size = 128
 node_num = 8
 
 
+def Original(input_tensor, rank, output_tensor1, output_tensor2):
 
-def Original(input_tensor, rank):
-    
+    # Ensure that the group creation (torch.distributed.new_group) is called consistently across all processes. 
+    # group creation cannot be in "if rank < int(node_num/2):"
     SP_group_1 = torch.distributed.new_group(ranks=[0,1,2,3])
     SP_group_2 = torch.distributed.new_group(ranks=[4,5,6,7])
 
-    # 2.866s
     if rank < int(node_num/2):
-        dist.all_reduce(input_tensor, op=dist.reduce_op.SUM, group=SP_group_1)
+        dist.all_reduce(input_tensor, op=dist.ReduceOp.SUM, group=SP_group_1)
     else:
-        dist.all_reduce(input_tensor, op=dist.reduce_op.SUM, group=SP_group_2)
+        dist.all_reduce(input_tensor, op=dist.ReduceOp.SUM, group=SP_group_2)
+    # dist.all_gather_into_tensor --- Gather tensors from all ranks and put them in a single output tensor.
 
-    # dist.barrier()
+    dist.all_to_all_single(output_tensor_2, output_tensor_1)
 
-    SP_group_3 = torch.distributed.new_group(ranks=[0,4])
-    SP_group_4 = torch.distributed.new_group(ranks=[1,5])
-    SP_group_5 = torch.distributed.new_group(ranks=[2,6])
-    SP_group_6 = torch.distributed.new_group(ranks=[3,7])
+    return output_tensor_2
 
-    # all2all_list = list(input_tensor.chunk(tp))
+def Fusion(input_tensor, rank, output_tensor1, output_tensor2):
 
-    output_tensor = torch.empty_like(input_tensor)
-
-    # 1s
-    if rank == 0 or rank == 4:
-        dist.all_to_all_single(output_tensor, input_tensor, group=SP_group_3)
-    elif rank == 1 or rank == 5:
-        dist.all_to_all_single(output_tensor, input_tensor, group=SP_group_4)
-    elif rank == 2 or rank == 6:
-        dist.all_to_all_single(output_tensor, input_tensor, group=SP_group_5)
-    elif rank == 3 or rank == 7:
-        dist.all_to_all_single(output_tensor, input_tensor, group=SP_group_6)
-
-    return 
-
-# / need int(/)
-def Fusion(input_tensor, rank):
+    # Ensure that the group creation (torch.distributed.new_group) is called consistently across all processes. 
+    # group creation cannot be in "if rank < int(node_num/2):"
     SP_group_1 = torch.distributed.new_group(ranks=[0,1,2,3])
     SP_group_2 = torch.distributed.new_group(ranks=[4,5,6,7])
 
-    output_tensor = torch.zeros(int(input_tensor.shape[0]/tp), input_tensor.shape[1]).cuda()
-    
-    # 2s
     if rank < int(node_num/2):
-        torch.distributed._reduce_scatter_base(output_tensor, input_tensor, group=SP_group_1)
+        torch.distributed._reduce_scatter_base(output_tensor_1, input_tensor, group=SP_group_1)
     else:
-        torch.distributed._reduce_scatter_base(output_tensor, input_tensor, group=SP_group_2)
+        torch.distributed._reduce_scatter_base(output_tensor_2, input_tensor, group=SP_group_2)
+    # dist.all_gather_into_tensor --- Gather tensors from all ranks and put them in a single output tensor.
 
-    # dist.barrier()
+    dist.all_to_all_single(output_tensor_2, output_tensor_1)
 
-    output_tensor_2 = torch.empty_like(output_tensor)
-    # 1.8050880432128906s
-    dist.all_to_all_single(output_tensor_2, output_tensor)
-
-    return 
+    return output_tensor_2
 
 
 
@@ -96,10 +74,12 @@ if __name__ == '__main__':
     
 
     input_tensor = torch.rand(batch_size * sequence, embedding_size).cuda()
+    output_tensor_1 = torch.zeros(int(input_tensor.shape[0]/tp), input_tensor.shape[1]).cuda()
+    output_tensor_2 = torch.zeros(int(input_tensor.shape[0]/tp), input_tensor.shape[1]).cuda()
 
     dist.barrier()
     start = time.time()
-    output = Original(input_tensor, rank)
+    output = Original(input_tensor, rank, output_tensor_1, output_tensor_2)
     dist.barrier()
     if dist.get_rank()== 0:
         print(f'Original Time:{time.time()-start}')
@@ -107,9 +87,7 @@ if __name__ == '__main__':
 
     dist.barrier()
     start = time.time()
-    output = Fusion(input_tensor, rank)
+    output = Fusion(input_tensor, rank, output_tensor_1, output_tensor_2)
     dist.barrier()
     if dist.get_rank()== 0:
         print('Fusion Time:', time.time()-start)
-
-

@@ -443,8 +443,39 @@ for cluster_idx, cluster_step in enumerate([2, 3, 4]):
             reduction=reduction_cores
         )
 
-        cluster_moe_event_tag, cluster_moe_dependency_list = compute_2d_base(
+        cluster_sub0_allgather_event_tag, cluster_sub0_allgather_dependency_list = allgather_api.cal_time(
             whole_nodes=node_network, current_event_tag=cluster_alltoall_event_tag, current_dependency_list=cluster_alltoall_dependency_list,
+            source_nodes_coordinates_list=cluster_sub0_nodes_lists[cluster_step],
+            source_x_number=cluster_sub0_shapes[cluster_step][1], source_y_number=cluster_sub0_shapes[cluster_step][0],
+            topology_x_limitation=node_k, topology_y_limitation=node_k,
+            message_flits=pass_bytes,
+            reduction=reduction_cores
+        )
+
+        cluster_sub1_allgather_event_tag, cluster_sub1_allgather_dependency_list = allgather_api.cal_time(
+            whole_nodes=node_network, current_event_tag=cluster_sub0_allgather_event_tag, current_dependency_list=cluster_alltoall_dependency_list,
+            source_nodes_coordinates_list=cluster_sub1_nodes_lists[cluster_step],
+            source_x_number=cluster_sub1_shapes[cluster_step][1], source_y_number=cluster_sub1_shapes[cluster_step][0],
+            topology_x_limitation=node_k, topology_y_limitation=node_k,
+            message_flits=pass_bytes,
+            reduction=reduction_cores
+        )
+        
+        cluster_allgather_events = []
+        for dependency_y in cluster_sub1_allgather_dependency_list:
+            for dependency_x in dependency_y:
+                for dependency_event in dependency_x:
+                    if dependency_event not in cluster_allgather_events:
+                        cluster_allgather_events.append(dependency_event)
+        for dependency_y in cluster_sub0_allgather_dependency_list:
+            for dependency_x in dependency_y:
+                for dependency_event in dependency_x:
+                    if dependency_event not in cluster_allgather_events:
+                        cluster_allgather_events.append(dependency_event)
+        cluster_allgather_dependency_list = [[cluster_allgather_events for _ in range(cluster_shapes[cluster_step][1])] for _ in range(cluster_shapes[cluster_step][0])]
+
+        cluster_moe_event_tag, cluster_moe_dependency_list = compute_2d_base(
+            whole_nodes=node_network, current_event_tag=cluster_sub1_allgather_event_tag, current_dependency_list=cluster_allgather_dependency_list,
             source_nodes_coordinates_list=cluster_nodes_lists[cluster_step],
             source_x_number=cluster_shapes[cluster_step][1], source_y_number=cluster_shapes[cluster_step][0],
             topology_x_limitation=node_k, topology_y_limitation=node_k,

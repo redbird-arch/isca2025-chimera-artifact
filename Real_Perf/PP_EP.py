@@ -13,8 +13,7 @@ batch_size = 64
 
 node_num = 8
 
-def P2P_All2All(input_tensor, rank, group):
-    output_tensor = torch.empty_like(input_tensor)
+def P2P_All2All(input_tensor, rank, group, output_tensor):
 
     # torch.cuda.synchronize()
     dist.barrier()
@@ -35,12 +34,10 @@ def P2P_All2All(input_tensor, rank, group):
     # print(f"TEST: RANK{rank}:{output_tensor}")
     return output_tensor
 
-def Fused_Multicast(input_tensor, rank, group):
+def Fused_Multicast(input_tensor, rank, group, output_tensor):
     '''
     baseline
     '''
-
-    output_tensor = torch.empty_like(input_tensor)
 
     scatter_list = list(input_tensor.chunk(int(node_num/2)))
     gather_list  = list(output_tensor.chunk(int(node_num/2)))
@@ -137,12 +134,13 @@ if __name__ == '__main__':
     All2All_group = torch.distributed.new_group(ranks=All2All_nodes)
 
     input_tensor = torch.rand(batch_size * sequence, embedding_size).cuda()
+    output_tensor = torch.empty_like(input_tensor)
     
     # print(f"START: RANK{rank}:{input_tensor}")
-    output = P2P_All2All(input_tensor, rank, All2All_group)
+    output = P2P_All2All(input_tensor, rank, All2All_group, output_tensor)
     # print(f"END-P2P_All2All: RANK{rank}:{output}")
 
-    output = Fused_Multicast(input_tensor, rank, All2All_group)
+    output = Fused_Multicast(input_tensor, rank, All2All_group, output_tensor)
     # output = Fused_Multicast_opt_1(input_tensor, rank, All2All_group)
 
     # print(f"END-Fused_Multicast: RANK{rank}:{output}")

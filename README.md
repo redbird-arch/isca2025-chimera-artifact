@@ -93,3 +93,10 @@ cd ./src/User/Chimera/experiment/Pictures
 conda activate Chimera
 bash plot-figure.sh
 ```
+
+## Notes
+
+### Performance variation for real-machine results
+For machines with different topologies (e.g., NVSwitch fully-connected system), the results can be rather different (even negative speedups with fusion). We have observed such results in an 8xH20 GPU node. One possible reason for that is the NVSwitch bandwidth degradation with more GPU neighbors. On NVSwitch systems, bandwidth can vary significantly depending on the number of concurrent GPU neighbors (i.e., how many devices are utilizing the NVSwitch simultaneously), especially during large data transmissions[1]. As the number of active devices increases, the available bandwidth per device may drop to as low as half of that available to a single device. In the affected experiments, we fuse several local communication operators (e.g., All-to-All in PP+EP, All-Gather in PP+SP, each over 4 devices) into a global operator (e.g., 8-device M2MS). Although this fusion reduces communication volume, it results in longer transmission time on NVSwitch machines, thus explaining the performance differences.<br>
+There are two methods to reproduce our results in this kind of machines: (1) limiting the number of GPUs to 4 to mitigate the bandwidth contention, and (2) disabling NVLink to force communication over PCIe.<br>
+Reference[1]: [NSDI 2023] TACCL: Guiding Collective Algorithm Synthesis using Communication Sketches (https://www.usenix.org/conference/nsdi23/presentation/shah)

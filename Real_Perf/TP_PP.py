@@ -19,7 +19,7 @@ node_num = 8
 
 
 
-def Original(input_tensor, rank):
+def Original(input_tensor, rank, multicast_list1, output_tensor_list1, output_tensor1):
 
     SP_group_1 = torch.distributed.new_group(ranks=[0,1,2,3])
     SP_group_2 = torch.distributed.new_group(ranks=[4,5,6,7])
@@ -27,62 +27,47 @@ def Original(input_tensor, rank):
     if rank < int(node_num/2):
         dist.all_reduce(input_tensor, op=dist.reduce_op.SUM, group=SP_group_1)
 
-    multicast_list = list(input_tensor.chunk(tp*tp))
-
-    output_tensor_list = [torch.zeros(int(input_tensor.shape[0]/(tp*tp)), input_tensor.shape[1]).cuda() for _ in range(tp)]
-
     reqs = []
-
     if rank < int(node_num/2):
         for i in range(int(node_num/2)):
-            req = dist.isend(tensor=multicast_list[tp*rank+i], dst= int(node_num/2) + i)
+            req = dist.isend(tensor=multicast_list1[tp*rank+i], dst= int(node_num/2) + i)
             reqs.append(req)
     else:
         for i in range(int(node_num/2)):
-            req = dist.irecv(tensor=output_tensor_list[i], src=i)
+            req = dist.irecv(tensor=output_tensor_list1[i], src=i)
             reqs.append(req)
 
     for req in reqs:
         req.wait()
 
     # del multicast_list
-    output_tensor = torch.cat(output_tensor_list,dim=0)
     # del output_tensor_list
 
-    all_gather_list = [torch.empty_like(output_tensor) for _ in range(tp)]
-    dist.all_gather(all_gather_list, output_tensor, group=SP_group_2)
+    all_gather_list = [torch.empty_like(output_tensor1) for _ in range(tp)]
+    dist.all_gather(all_gather_list, output_tensor1, group=SP_group_2)
 
     return 
 
 
-def Fusion(input_tensor, rank):
+def Fusion(input_tensor, rank, output_tensor2, multicast_list2, output_tensor_list2, output_tensor_2):
     SP_group_1 = torch.distributed.new_group(ranks=[0,1,2,3])
     SP_group_2 = torch.distributed.new_group(ranks=[4,5,6,7])
 
-    output_tensor = torch.zeros(int(input_tensor.shape[0]/tp), input_tensor.shape[1]).cuda()
     
-    torch.distributed._reduce_scatter_base(output_tensor, input_tensor, group=SP_group_1)
-
-    multicast_list = list(output_tensor.chunk(tp))
-    output_tensor_list = [torch.empty_like(multicast_list[0]) for _ in range(tp)]
-
+    torch.distributed._reduce_scatter_base(output_tensor2, input_tensor, group=SP_group_1)
     reqs = []
 
     if rank < int(node_num/2):
         for i in range(int(node_num/2)):
-            req = dist.isend(tensor=multicast_list[i], dst= int(node_num/2) + i)
+            req = dist.isend(tensor=multicast_list2[i], dst= int(node_num/2) + i)
             reqs.append(req)
     else:
         for i in range(int(node_num/2)):
-            req = dist.irecv(tensor=output_tensor_list[i], src=i)
+            req = dist.irecv(tensor=output_tensor_list2[i], src=i)
             reqs.append(req)
 
     for req in reqs:
         req.wait()
-
-    # del multicast_list
-    output_tensor_2 = torch.cat(output_tensor_list,dim=0)
-    # del output_tensor_list
 
     all_gather_list = [torch.empty_like(output_tensor_2) for _ in range(tp)]
     dist.all_gather(all_gather_list, output_tensor_2, group=SP_group_2)
@@ -111,10 +96,21 @@ if __name__ == '__main__':
     
 
     input_tensor = torch.rand(batch_size * sequence, embedding_size).cuda()
+    
+    multicast_list1 = list(input_tensor.chunk(tp*tp))
+    output_tensor_list1 = [torch.zeros(int(input_tensor.shape[0]/(tp*tp)), input_tensor.shape[1]).cuda() for _ in range(tp)]
+    output_tensor1 = torch.cat(output_tensor_list1,dim=0)
+
+    output_tensor2 = torch.zeros(int(input_tensor.shape[0]/tp), input_tensor.shape[1]).cuda()
+    multicast_list2 = list(output_tensor2.chunk(tp))
+    output_tensor_list2 = [torch.empty_like(multicast_list2[0]) for _ in range(tp)]
+    output_tensor_2 = torch.cat(output_tensor_list2,dim=0)
+
+
 
     dist.barrier()
     start = time.time()
-    output = Original(input_tensor, rank)
+    output = Original(input_tensor, rank, multicast_list1, output_tensor_list1, output_tensor1)
     dist.barrier()
     if dist.get_rank()== 0:
         print(f'Original Time:{time.time()-start}')
@@ -122,7 +118,7 @@ if __name__ == '__main__':
 
     dist.barrier()
     start = time.time()
-    output = Fusion(input_tensor, rank)
+    output = Fusion(input_tensor, rank, output_tensor2, multicast_list2, output_tensor_list2, output_tensor_2)
     dist.barrier()
     if dist.get_rank()== 0:
         print('Fusion Time:', time.time()-start)

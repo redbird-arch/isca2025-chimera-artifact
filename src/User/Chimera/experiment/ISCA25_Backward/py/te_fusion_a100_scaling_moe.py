@@ -350,8 +350,39 @@ for cluster_idx, cluster_step in enumerate([0, 1, 2]):
             reduction=computation
         )
 
-        cluster_alltoall_event_tag, cluster_alltoall_dependency_list = alltoall_api.cal_time(
+        cluster_sub0_reducescatter_event_tag, cluster_sub0_reducescatter_dependency_list = reducescatter_api.cal_time(
             whole_nodes=node_network, current_event_tag=cluster_moe_weight_event_tag, current_dependency_list=cluster_moe_input_dependency_list,
+            source_nodes_coordinates_list=cluster_sub0_nodes_lists[cluster_step],
+            source_x_number=cluster_sub0_shapes[cluster_step][1], source_y_number=cluster_sub0_shapes[cluster_step][0],
+            topology_x_limitation=node_k, topology_y_limitation=node_k,
+            message_flits=pass_bytes,
+            reduction=reduction_cores
+        )
+
+        cluster_sub1_reducescatter_event_tag, cluster_sub1_reducescatter_dependency_list = reducescatter_api.cal_time(
+            whole_nodes=node_network, current_event_tag=cluster_sub0_reducescatter_event_tag, current_dependency_list=cluster_moe_input_dependency_list,
+            source_nodes_coordinates_list=cluster_sub1_nodes_lists[cluster_step],
+            source_x_number=cluster_sub1_shapes[cluster_step][1], source_y_number=cluster_sub1_shapes[cluster_step][0],
+            topology_x_limitation=node_k, topology_y_limitation=node_k,
+            message_flits=pass_bytes,
+            reduction=reduction_cores
+        )
+
+        cluster_reducescatter_events = []
+        for dependency_y in cluster_sub1_reducescatter_dependency_list:
+            for dependency_x in dependency_y:
+                for dependency_event in dependency_x:
+                    if dependency_event not in cluster_reducescatter_events:
+                        cluster_reducescatter_events.append(dependency_event)
+        for dependency_y in cluster_sub0_reducescatter_dependency_list:
+            for dependency_x in dependency_y:
+                for dependency_event in dependency_x:
+                    if dependency_event not in cluster_reducescatter_events:
+                        cluster_reducescatter_events.append(dependency_event)
+        cluster_reducescatter_dependency_list = [[cluster_reducescatter_events for _ in range(cluster_shapes[cluster_step][1])] for _ in range(cluster_shapes[cluster_step][0])]
+
+        cluster_alltoall_event_tag, cluster_alltoall_dependency_list = alltoall_api.cal_time(
+            whole_nodes=node_network, current_event_tag=cluster_sub1_reducescatter_event_tag, current_dependency_list=cluster_reducescatter_dependency_list,
             source_nodes_coordinates_list=cluster_nodes_lists[cluster_step],
             source_x_number=cluster_shapes[cluster_step][1], source_y_number=cluster_shapes[cluster_step][0],
             topology_x_limitation=node_k, topology_y_limitation=node_k,
